@@ -25,6 +25,7 @@ func get_input():
 		$AnimatedSprite.play("walk")
 	else:
 		$AnimatedSprite.stop()
+		$AnimatedSprite.frame = 0
 	
 	if !is_on_floor():
 		$AnimatedSprite.play("jump")
