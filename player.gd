@@ -12,14 +12,32 @@ var egg = preload("res://egg.tscn")
 
 func get_input():
 	velocity.x = 0
+	var do_walk = false
 	if Input.is_action_pressed("right"):
 		velocity.x += speed
-		$Sprite.set_flip_h(false)
+		$AnimatedSprite.set_flip_h(false)
+		do_walk = true
 	if Input.is_action_pressed("left"):
 		velocity.x -= speed
-		$Sprite.set_flip_h(true)
+		$AnimatedSprite.set_flip_h(true)
+		do_walk = true
+	if do_walk:
+		$AnimatedSprite.play("walk")
+	else:
+		$AnimatedSprite.stop()
+	
+	if !is_on_floor():
+		$AnimatedSprite.play("jump")
+	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = jump_speed
+
+func _physics_process(delta):
+	var before_y = velocity.y
+	
+	velocity.y += gravity * delta
+	get_input()
+	
 	if Input.is_action_just_pressed("egg_toggle"):
 		var new_egg = egg.instance()
 		new_egg.position = position
@@ -27,10 +45,7 @@ func get_input():
 		get_parent().add_child(new_egg)
 		.hide()
 		.queue_free()
-
-func _physics_process(delta):
-	velocity.y += gravity * delta
-	get_input()
+	
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
