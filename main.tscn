@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://platform.tscn" type="PackedScene" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://img/backgroundpalceholder.png" type="Texture" id=4]
 [ext_resource path="res://img/enviro/test this hole.png" type="Texture" id=5]
 [ext_resource path="res://img/enviro/holetestbg.png" type="Texture" id=6]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.9
+
+[sub_resource type="PhysicsMaterial" id=2]
+friction = 0.1
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 1, 0 )
@@ -30,6 +36,7 @@ position = Vector2( 361.42, 215.247 )
 position = Vector2( 532.54, 200.398 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
+physics_material_override = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Ground"]
 position = Vector2( 18.6877, 329.705 )
@@ -37,14 +44,22 @@ texture = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2( 18.6877, 328.815 )
-polygon = PoolVector2Array( -223, 130.3, -89.3, 170, -83.1, 170, 27, 166.9, 27, 168.6, 128.7, 182, 129.4, 182, 355.5, 132, 367.5, 132, 426.6, 145, 434, 145, 523, 132.2, 523, 134.5, 657, 149.5, 657, 153, 663.9, 159.8, 661.3, 166, 652.2, 219, 648.4, 219, 562.4, 271, 559, 271, 466.8, 301, 460.6, 301, 269.5, 343, 262, 343, 185.4, 354, 166, 354, -39, 357.9, -39, 358.6, -184.8, 370, -419, 370, -419, 368.7, -587, 358.7, -587, 357.1, -653, 344.1, -653, 342.5, -673, 335.5, -673, 333.2, -732.9, 279.4, -730.4, 273, -726, 273, -581, 274.9, -506, 267.5, -506, 269.8, -458.3, 278.5, -340, 195.4, -289.1, 142, -285.9, 142, -254, 130.5, -254, 128, -223, 128 )
+polygon = PoolVector2Array( -223, 130.3, -89.3, 170, -83.1, 170, 26.8387, 166.829, 28.5072, 168.665, 128.7, 182, 129.4, 182, 355.5, 132, 367.5, 132, 426.6, 145, 434, 145, 523, 132.2, 523, 134.5, 657, 149.5, 657, 153, 663.9, 159.8, 661.3, 166, 652.2, 219, 648.4, 219, 562.4, 271, 559, 271, 466.8, 301, 460.6, 301, 269.5, 343, 262, 343, 185.4, 354, 166, 354, -39, 357.9, -39, 358.6, -184.8, 370, -419, 370, -419, 368.7, -587, 358.7, -587, 357.1, -653, 344.1, -653, 342.5, -673, 335.5, -673, 333.2, -732.9, 279.4, -738.227, 273.339, -726, 273, -676.421, 273.76, -636.058, 272.288, -581.4, 277.123, -541.064, 269.872, -506, 269.8, -480.86, 279.237, -456.63, 280.872, -446.819, 268.386, -340, 195.4, -289.472, 144.835, -285.9, 142, -254, 130.5, -254.053, 130.484, -223.01, 130.343 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2( 18.6877, 329.705 )
 polygon = PoolVector2Array( 1024, 131.2, 1024, 1021.1, 1021.1, 1024, -1023, 1024, -1024, 650.5, -1024, 276, -1020.4, 276, -995.4, 261, -969.6, 261, -933.5, 253, -914.7, 253, -798, 268.6, -798, 271.9, -755.9, 313, -754.4, 313, -703.5, 350, -701.2, 350, -649.3, 368, -642.5, 368, -492.5, 400, -458.3, 400, -248.2, 386, -194, 386, 162, 387, 503, 325.8, 588, 300.3, 640, 270.1, 677, 235.8, 677, 234.1, 712, 195.1, 712, 193, 726.6, 157, 746.1, 157, 823.8, 158.9, 898.4, 140, 904.4, 140, 982, 130.5, 982, 128.7 )
 
+[node name="Ground2" type="StaticBody2D" parent="."]
+physics_material_override = SubResource( 2 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Ground2"]
+position = Vector2( 18.6877, 328.705 )
+build_mode = 1
+polygon = PoolVector2Array( -500.745, 700.589, -739.56, 576.137, -798, 268.6, -798, 271.9, -755.9, 313, -754.4, 313, -703.5, 350, -701.2, 350, -649.3, 368, -642.5, 368, -492.5, 400, -458.3, 400, -248.2, 386, -194, 386, 162, 387, 503, 325.8, 588, 300.3, 640, 270.1, 677, 235.8, 677, 234.1, 712, 195.1, 712, 193, 726.6, 157, 753.873, 673.681 )
+
 [node name="HoleBG" type="Sprite" parent="."]
-position = Vector2( 15.1361, 326.268 )
+position = Vector2( 16.8179, 327.95 )
 z_index = -1
 texture = ExtResource( 6 )
 
