@@ -12,7 +12,7 @@ height = 3.30064
 
 [node name="Egg" type="RigidBody2D"]
 physics_material_override = SubResource( 1 )
-gravity_scale = 2.0
+gravity_scale = 5.0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

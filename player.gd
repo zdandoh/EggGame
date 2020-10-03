@@ -40,9 +40,9 @@ func _physics_process(delta):
 	get_input()
 	
 	if Input.is_action_just_pressed("egg_toggle"):
+		$AnimatedSprite.play("egging")
 		var new_egg = egg.instance()
 		new_egg.position = position
-		new_egg.set_axis_velocity(velocity)
 		get_parent().add_child(new_egg)
 		.hide()
 		.queue_free()
@@ -52,3 +52,7 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_AnimatedSprite_animation_finished():
+	pass # Replace with function body.
