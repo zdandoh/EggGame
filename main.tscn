@@ -10,20 +10,9 @@ position = Vector2( 1, 0 )
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 316, 249 )
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 382, 410 )
-rotation = -0.759959
-
 [node name="StaticBody2D4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 313, 433 )
-
-[node name="StaticBody2D3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 242, 426 )
-rotation = 0.206731
-
-[node name="StaticBody2D2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 176, 405 )
-rotation = 2.06665
+scale = Vector2( 7, 1 )
 
 [node name="Egg" parent="." instance=ExtResource( 3 )]
 position = Vector2( 271, 130 )

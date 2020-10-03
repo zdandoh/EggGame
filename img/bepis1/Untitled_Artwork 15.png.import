@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bepis1.png-4de824b9f8cac9d936cbb7e03d1b070d.stex"
+path="res://.import/Untitled_Artwork 15.png-24d26660fbe14eeb5c3382552e97499d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/bepis1.png"
-dest_files=[ "res://.import/bepis1.png-4de824b9f8cac9d936cbb7e03d1b070d.stex" ]
+source_file="res://img/bepis1/Untitled_Artwork 15.png"
+dest_files=[ "res://.import/Untitled_Artwork 15.png-24d26660fbe14eeb5c3382552e97499d.stex" ]
 
 [params]
 
