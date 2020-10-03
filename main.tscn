@@ -8,7 +8,7 @@
 [ext_resource path="res://img/enviro/holetestbg.png" type="Texture" id=6]
 [ext_resource path="res://pileorocks.png" type="Texture" id=7]
 [ext_resource path="res://img/enviro/hole_cover.png" type="Texture" id=8]
-[ext_resource path="res://img/enviro/tree1.png" type="Texture" id=9]
+[ext_resource path="res://img/enviro/mushtree.png" type="Texture" id=9]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.9
@@ -21,9 +21,9 @@ position = Vector2( 1, 0 )
 script = ExtResource( 1 )
 
 [node name="BG" type="Sprite" parent="."]
-position = Vector2( 2195.1, 1017.92 )
+position = Vector2( 2207.54, 1024.14 )
 scale = Vector2( 1.05301, 1.06916 )
-z_index = -1
+z_index = -10
 texture = ExtResource( 4 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
@@ -103,24 +103,49 @@ texture = ExtResource( 8 )
 build_mode = 1
 polygon = PoolVector2Array( -790.47, -69.8948, -692.999, -58.2408, -369.863, 5.32703, 394.01, -78.3705, 667.351, -184.317, 769.06, -174.782, 765.881, 145.176, -569.042, 191.793, -811.659, -2.08917 )
 
-[node name="Tree" type="Sprite" parent="."]
-position = Vector2( 277.001, 150.803 )
-texture = ExtResource( 9 )
-
-[node name="Tree4" type="Sprite" parent="."]
-position = Vector2( -578.608, 274.62 )
-scale = Vector2( -1, 1 )
-texture = ExtResource( 9 )
-
-[node name="Tree3" type="Sprite" parent="."]
-position = Vector2( 568.357, 134.154 )
-rotation = 0.0928949
+[node name="mushtree5" type="Sprite" parent="."]
+position = Vector2( 961.14, 398.34 )
+rotation = -0.0122173
+scale = Vector2( 3.18116, 2.90863 )
 z_index = -1
 texture = ExtResource( 9 )
 
-[node name="Tree2" type="Sprite" parent="."]
-position = Vector2( 960.796, 138.911 )
-scale = Vector2( -1, 1 )
+[node name="mushtree6" type="Sprite" parent="."]
+position = Vector2( 200.636, 434.229 )
+rotation = -0.146608
+scale = Vector2( 2.42348, 2.21586 )
+z_index = -1
+texture = ExtResource( 9 )
+
+[node name="mushtree" type="Sprite" parent="."]
+position = Vector2( 250.481, 335.6 )
+scale = Vector2( 4.42466, 5.13234 )
+z_index = -2
+texture = ExtResource( 9 )
+
+[node name="mushtree4" type="Sprite" parent="."]
+position = Vector2( 779.975, 347.48 )
+scale = Vector2( 4.42466, 5.13234 )
+z_index = -2
+texture = ExtResource( 9 )
+
+[node name="mushtree3" type="Sprite" parent="."]
+position = Vector2( 435.464, 390.173 )
+rotation = 0.190241
+scale = Vector2( 3.18116, 2.90863 )
+z_index = -1
+texture = ExtResource( 9 )
+
+[node name="mushtree2" type="Sprite" parent="."]
+position = Vector2( 872.042, 235.737 )
+scale = Vector2( 5.95603, 8.5083 )
+z_index = -2
+texture = ExtResource( 9 )
+
+[node name="mushtree7" type="Sprite" parent="."]
+position = Vector2( -13.7006, 95.6649 )
+scale = Vector2( 8.77934, 14.0355 )
+z_index = -2
 texture = ExtResource( 9 )
 [connection signal="body_entered" from="HoleCover/Area2D" to="Egg" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="HoleCover/Area2D" to="Egg" method="_on_Area2D_body_exited"]
