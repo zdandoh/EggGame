@@ -6,6 +6,8 @@ var gravity = 750
 var jump_speed = -450
 var velocity = Vector2()
 
+var egg = preload("res://egg.tscn")
+
 # Called when the node enters the scene tree for the first time.
 
 func get_input():
@@ -18,6 +20,13 @@ func get_input():
 		$Sprite.set_flip_h(true)
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = jump_speed
+	if Input.is_action_just_pressed("egg_toggle"):
+		var new_egg = egg.instance()
+		new_egg.position = position
+		new_egg.set_axis_velocity(velocity)
+		get_parent().add_child(new_egg)
+		.hide()
+		.queue_free()
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
