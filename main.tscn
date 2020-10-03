@@ -7,21 +7,23 @@
 [node name="Node2D" type="Node2D"]
 position = Vector2( 1, 0 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 449.0
-margin_top = 283.0
-margin_right = 530.0
-margin_bottom = 297.0
-text = "Hello, world!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 399, 290 )
+position = Vector2( 316, 249 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 311, 434 )
+position = Vector2( 382, 410 )
+rotation = -0.759959
+
+[node name="StaticBody2D4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 313, 433 )
+
+[node name="StaticBody2D3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 242, 426 )
+rotation = 0.206731
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 176, 405 )
+rotation = 2.06665
 
 [node name="Egg" parent="." instance=ExtResource( 3 )]
 position = Vector2( 271, 130 )
