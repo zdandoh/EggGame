@@ -1,21 +1,29 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://img/bepis1/Untitled_Artwork15.png" type="Texture" id=1]
 [ext_resource path="res://player.gd" type="Script" id=2]
 [ext_resource path="res://img/bepis1/Untitled_Artwork-3.png" type="Texture" id=3]
 [ext_resource path="res://img/bepis1/Untitled_Artwork-1.png" type="Texture" id=4]
+[ext_resource path="res://img/bepis1/Untitled_Artwork-2.png" type="Texture" id=5]
+[ext_resource path="res://img/bepis1/bepis_preggo2.png" type="Texture" id=6]
+[ext_resource path="res://img/bepis1/bepis_preggo3.png" type="Texture" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 11.6844
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 3.50851, 3.44278 )
+extents = Vector2( 10.0485, 8.50204 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "egging",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ) ],
@@ -32,7 +40,7 @@ position = Vector2( -0.75843, 1.86574 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( -0.250278, 25.1116 )
+position = Vector2( -0.918453, 20.323 )
 shape = SubResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
@@ -42,4 +50,5 @@ current = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-animation = "jump"
+animation = "egging"
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
