@@ -15,7 +15,8 @@ func _process(delta):
 		$BG.position = $Player.position
 	if get_node_or_null("Egg") != null:
 		$BG.position = $Egg.position
-
+	if Input.is_action_pressed("reload"):
+		get_tree().reload_current_scene()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

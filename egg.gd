@@ -24,3 +24,10 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func _on_Area2D_body_entered(body):
+	print(body)
+
+
+func _on_Area2D_body_exited(body):
+	print("exit")

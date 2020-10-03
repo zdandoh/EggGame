@@ -43,6 +43,8 @@ func _physics_process(delta):
 		$AnimatedSprite.play("egging")
 		var new_egg = egg.instance()
 		new_egg.position = position
+		new_egg.linear_velocity.x = velocity.x / 4
+		new_egg.linear_velocity.y = velocity.y
 		get_parent().add_child(new_egg)
 		.hide()
 		.queue_free()

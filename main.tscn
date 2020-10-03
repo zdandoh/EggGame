@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://platform.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://img/backgroundpalceholder.png" type="Texture" id=4]
 [ext_resource path="res://img/enviro/test this hole.png" type="Texture" id=5]
 [ext_resource path="res://img/enviro/holetestbg.png" type="Texture" id=6]
+[ext_resource path="res://pileorocks.png" type="Texture" id=7]
+[ext_resource path="res://img/enviro/hole_cover.png" type="Texture" id=8]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.9
@@ -24,16 +26,16 @@ z_index = -1
 texture = ExtResource( 4 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 450.963, 340.049 )
+position = Vector2( 513.959, 350.128 )
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 465.365, 92.9176 )
+position = Vector2( 528.361, 102.997 )
 
 [node name="StaticBody2D3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 361.42, 215.247 )
+position = Vector2( 424.416, 225.326 )
 
 [node name="StaticBody2D6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 532.54, 200.398 )
+position = Vector2( 595.536, 210.477 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
 physics_material_override = SubResource( 1 )
@@ -44,7 +46,7 @@ texture = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2( 18.6877, 328.815 )
-polygon = PoolVector2Array( -223, 130.3, -89.3, 170, -83.1, 170, 26.8387, 166.829, 28.5072, 168.665, 128.7, 182, 129.4, 182, 355.5, 132, 367.5, 132, 426.6, 145, 434, 145, 523, 132.2, 523, 134.5, 657, 149.5, 657, 153, 663.9, 159.8, 661.3, 166, 652.2, 219, 648.4, 219, 562.4, 271, 559, 271, 466.8, 301, 460.6, 301, 269.5, 343, 262, 343, 185.4, 354, 166, 354, -39, 357.9, -39, 358.6, -184.8, 370, -419, 370, -419, 368.7, -587, 358.7, -587, 357.1, -653, 344.1, -653, 342.5, -673, 335.5, -673, 333.2, -732.9, 279.4, -738.227, 273.339, -726, 273, -676.421, 273.76, -636.058, 272.288, -581.4, 277.123, -541.064, 269.872, -506, 269.8, -480.86, 279.237, -456.63, 280.872, -446.819, 268.386, -340, 195.4, -289.472, 144.835, -285.9, 142, -254, 130.5, -254.053, 130.484, -223.01, 130.343 )
+polygon = PoolVector2Array( -223, 130.3, -89.3, 170, -83.1, 170, 26.8387, 166.829, 28.5072, 168.665, 128.7, 182, 129.4, 182, 355.5, 132, 367.5, 132, 426.6, 145, 434, 145, 493.812, 135.669, 518.842, 136.066, 523, 134.5, 657, 149.5, 657, 153, 663.9, 159.8, 661.3, 166, 652.2, 219, 648.4, 219, 562.4, 271, 559, 271, 466.8, 301, 460.6, 301, 269.5, 343, 262, 343, 185.4, 354, 166, 354, -39, 357.9, -39, 358.6, -184.8, 370, -419, 370, -419, 368.7, -587, 358.7, -587, 357.1, -653, 344.1, -653, 342.5, -673, 335.5, -673, 333.2, -732.9, 279.4, -738.227, 273.339, -726, 273, -676.421, 273.76, -636.058, 272.288, -581.4, 277.123, -541.064, 269.872, -506, 269.8, -480.86, 279.237, -456.63, 280.872, -446.819, 268.386, -340, 195.4, -289.472, 144.835, -285.9, 142, -254, 130.5, -254.053, 130.484, -223.01, 130.343 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2( 18.6877, 329.705 )
@@ -71,3 +73,27 @@ polygon = PoolVector2Array( 646.156, 152.992, 780.536, 168.452, 447.558, 450.294
 
 [node name="Egg" parent="." instance=ExtResource( 3 )]
 position = Vector2( 839.336, 473.762 )
+
+[node name="Rocks" type="StaticBody2D" parent="."]
+position = Vector2( -62.4307, 283.168 )
+rotation = 0.123418
+scale = Vector2( -1, 2 )
+
+[node name="Sprite" type="Sprite" parent="Rocks"]
+texture = ExtResource( 7 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rocks"]
+polygon = PoolVector2Array( -7.5, -133.9, 8.5, -119.9, 8.5, -117.6, 38.6, -69, 39.5, -69, 79.5, -15.7, 79.5, -8, 84.3, 32, 85.6, 32, 95.5, 32.8, 121.2, 25, 134, 25, 137.5, 26.8, 137.5, 28.6, 151.9, 69, 153.2, 69, 178.5, 90.1, 178.5, 92.2, 183.5, 97.2, 183.5, 110, 180.8, 110, 153.5, 114.7, 153.5, 115.4, 128.9, 125, 116.5, 125, 116.5, 123.1, 103, 115, 100.3, 115, 80.1, 110.5, 55.9, 121, 54.8, 121, 29.5, 124.7, 29.5, 126.8, 25.3, 131, 19.4, 131, 7.5, 129.3, 7.5, 129.9, -52.5, 133.1, -52.5, 131.7, -96.5, 124.7, -96.5, 123.2, -163.5, 87.2, -163.5, 60, -164.3, 60, -173.7, -37, -170.7, -37, -139.5, -39.8, -139.5, -41.3, -132, -68, -130, -68, -113.5, -76.2, -102.5, -92, -97.9, -92, -89.5, -95.4, -76.3, -108, -73.5, -108, -63.5, -94.7, -63.5, -92.5, -54.3, -74, -52.5, -74, -41.5, -76.5, -41.5, -78.4, -15.5, -133.5, -15.5, -136, -7.5, -136 )
+
+[node name="HoleCover" type="Sprite" parent="."]
+visible = false
+position = Vector2( -5.79474, 669.684 )
+texture = ExtResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="HoleCover"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HoleCover/Area2D"]
+build_mode = 1
+polygon = PoolVector2Array( -790.47, -69.8948, -692.999, -58.2408, -369.863, 5.32703, 394.01, -78.3705, 667.351, -184.317, 769.06, -174.782, 765.881, 145.176, -569.042, 191.793, -811.659, -2.08917 )
+[connection signal="body_entered" from="HoleCover/Area2D" to="Egg" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="HoleCover/Area2D" to="Egg" method="_on_Area2D_body_exited"]
