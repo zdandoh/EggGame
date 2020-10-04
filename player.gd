@@ -48,9 +48,9 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	for i in get_slide_count():
 		var coll = get_slide_collision(i)
-		if coll.collider.name == "JumpShroom":
+		if coll.collider.name.begins_with("JumpShroom"):
 			velocity.y = jump_speed * 1.5
-		if coll.collider.name == "Enemy":
+		if coll.collider.name.begins_with("Enemy"):
 			$AnimatedSprite.play("death")
 			var new_cam = Camera2D.new()
 			new_cam.position = position
