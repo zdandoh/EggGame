@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://platform.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://img/enviro/betterrocks.png" type="Texture" id=7]
 [ext_resource path="res://img/enviro/hole_cover.png" type="Texture" id=8]
 [ext_resource path="res://img/enviro/mushtree.png" type="Texture" id=9]
+[ext_resource path="res://BeepBox.wav" type="AudioStream" id=10]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.9
@@ -157,3 +158,7 @@ texture = ExtResource( 9 )
 
 [node name="Egg" parent="." instance=ExtResource( 3 )]
 position = Vector2( 837.847, 471.21 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
