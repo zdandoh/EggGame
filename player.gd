@@ -46,7 +46,17 @@ func _physics_process(delta):
 	get_input()
 	
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-
+	for i in get_slide_count():
+		var coll = get_slide_collision(i)
+		if coll.collider.name == "JumpShroom":
+			velocity.y = jump_speed * 1.5
+		if coll.collider.name == "Enemy":
+			$AnimatedSprite.play("death")
+			var new_cam = Camera2D.new()
+			new_cam.position = position
+			new_cam.current = true
+			get_parent().add_child(new_cam)
+			$Camera2D.current = false
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "egging":

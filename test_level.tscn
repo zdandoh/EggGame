@@ -2,7 +2,7 @@
 
 [ext_resource path="res://pillar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://jumppad.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nest.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,5 +12,6 @@ scale = Vector2( 7, 1 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 65.7316, -66.5267 )
 
-[node name="JumpShroom" parent="." instance=ExtResource( 4 )]
-position = Vector2( -27.3827, -46.0346 )
+[node name="Nest" parent="." instance=ExtResource( 3 )]
+position = Vector2( -102.684, -59.8463 )
+target = "res://test_level.tscn"

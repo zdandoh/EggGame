@@ -6,7 +6,6 @@ extends AnimatedSprite
 # var b = "text"
 
 var goal = 0
-var dir = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

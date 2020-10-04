@@ -5,11 +5,18 @@ extends RigidBody2D
 # var a = 2
 # var b = "text"
 
+var _timer = Timer.new()
 var player = load("res://player.tscn")
+var recent_jump = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Camera2D.current = true;
+	set_contact_monitor(true)
+	contacts_reported = 1
+	add_child(_timer)
+	_timer.connect("timeout", self, "_on_Timer_timeout")
+	_timer.set_wait_time(0.05)
 
 func _physics_process(delta):
 	if linear_velocity.x > 0:
@@ -24,7 +31,14 @@ func _physics_process(delta):
 		get_parent().add_child(new_player)
 		.hide()
 		.queue_free()
+	
+	var bodies = get_colliding_bodies()
+	for bod in bodies:
+		if bod.name == "JumpShroom" && !recent_jump:
+			print("applied impulse")
+			apply_impulse(Vector2(0, 0), Vector2(0, -600))
+			recent_jump = true
+			_timer.start()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Timer_timeout():
+	recent_jump = false
