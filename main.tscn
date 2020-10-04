@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://platform.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://img/enviro/hole_cover.png" type="Texture" id=8]
 [ext_resource path="res://img/enviro/mushtree.png" type="Texture" id=9]
 [ext_resource path="res://BeepBox.wav" type="AudioStream" id=10]
+[ext_resource path="res://img/nest.png" type="Texture" id=11]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.9
@@ -162,3 +163,12 @@ position = Vector2( 837.847, 471.21 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
 autoplay = true
+
+[node name="nest" type="StaticBody2D" parent="."]
+position = Vector2( -1024.68, 559.69 )
+
+[node name="Sprite" type="Sprite" parent="nest"]
+texture = ExtResource( 11 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="nest"]
+polygon = PoolVector2Array( -10.8413, 25.8486, -10.7783, 20.9908, 12.4381, 20.7385, 12.2488, 26.0378 )
