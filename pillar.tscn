@@ -3,7 +3,7 @@
 [ext_resource path="res://img/ground.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.3399, 31.7617 )
+extents = Vector2( 32.0483, 31.7617 )
 
 [node name="Platform" type="StaticBody2D"]
 

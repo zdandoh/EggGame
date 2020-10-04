@@ -7,6 +7,7 @@ var jump_speed = -450
 var velocity = Vector2()
 
 var egg = preload("res://egg.tscn")
+var ghost = preload("res://ghost.tscn")
 
 # Called when the node enters the scene tree for the first time.
 
@@ -37,6 +38,8 @@ func get_input():
 		velocity.y = jump_speed
 
 func _physics_process(delta):
+	if $AnimatedSprite.animation == "death":
+		return
 	var before_y = velocity.y
 	
 	velocity.y += gravity * delta
@@ -53,4 +56,11 @@ func _on_AnimatedSprite_animation_finished():
 		new_egg.linear_velocity.x = velocity.x / 4
 		new_egg.linear_velocity.y = velocity.y
 		get_parent().add_child(new_egg)
+		$Camera2D.current = false
+		$CollisionShape2D.disabled = true
+		$AnimatedSprite.play("death")
+	if $AnimatedSprite.animation == "death":
+		var new_ghost = ghost.instance()
+		new_ghost.position = position
+		get_parent().add_child(new_ghost)
 		queue_free()
