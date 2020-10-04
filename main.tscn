@@ -14,7 +14,7 @@
 friction = 0.9
 
 [sub_resource type="PhysicsMaterial" id=2]
-friction = 0.1
+friction = 0.06
 
 [sub_resource type="PhysicsMaterial" id=3]
 friction = 5.0
@@ -81,9 +81,6 @@ linear_damp = 1.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HoleBG/Area2D"]
 polygon = PoolVector2Array( 646.156, 152.992, 780.536, 168.452, 447.558, 450.294, -411.049, 514.511, -881.975, 367.049, -868.894, 264.778, -832.029, 287.373, -798.731, 275.481, -721.432, 277.859, -226.722, 330.184, 371.449, 271.913 )
 
-[node name="Egg" parent="." instance=ExtResource( 3 )]
-position = Vector2( 839.336, 473.762 )
-
 [node name="Rocks" type="StaticBody2D" parent="."]
 position = Vector2( -62.4307, 283.168 )
 scale = Vector2( 4, 6 )
@@ -116,8 +113,8 @@ z_index = -1
 texture = ExtResource( 9 )
 
 [node name="mushtree6" type="Sprite" parent="."]
-position = Vector2( 200.636, 434.229 )
-rotation = -0.146608
+position = Vector2( 302.521, 423.741 )
+rotation = 0.223718
 scale = Vector2( 2.42348, 2.21586 )
 z_index = -1
 texture = ExtResource( 9 )
@@ -152,5 +149,6 @@ position = Vector2( -518.005, 220.682 )
 scale = Vector2( 8.77934, 14.0355 )
 z_index = -2
 texture = ExtResource( 9 )
-[connection signal="body_entered" from="HoleCover/Area2D" to="Egg" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="HoleCover/Area2D" to="Egg" method="_on_Area2D_body_exited"]
+
+[node name="Egg" parent="." instance=ExtResource( 3 )]
+position = Vector2( 837.847, 471.21 )

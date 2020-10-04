@@ -10,6 +10,9 @@ var egg = preload("res://egg.tscn")
 
 # Called when the node enters the scene tree for the first time.
 
+func _ready():
+	$Camera2D.current = true
+
 func get_input():
 	velocity.x = 0
 	var do_walk = false
@@ -21,14 +24,14 @@ func get_input():
 		velocity.x -= speed
 		$AnimatedSprite.set_flip_h(true)
 		do_walk = true
-	if do_walk:
+	if do_walk && !$AnimatedSprite.playing:
 		$AnimatedSprite.play("walk")
-	else:
+	elif !do_walk && $AnimatedSprite.animation != "egging" && is_on_floor():
 		$AnimatedSprite.stop()
 		$AnimatedSprite.frame = 0
 	
-	if !is_on_floor():
-		$AnimatedSprite.play("jump")
+	if Input.is_action_just_pressed("egg_toggle"):
+		$AnimatedSprite.play("egging")
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = jump_speed
@@ -39,22 +42,15 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	get_input()
 	
-	if Input.is_action_just_pressed("egg_toggle"):
-		$AnimatedSprite.play("egging")
+	velocity = move_and_slide(velocity, Vector2(0, -1))
+
+
+func _on_AnimatedSprite_animation_finished():
+	if $AnimatedSprite.animation == "egging":
+		$AnimatedSprite.stop()
 		var new_egg = egg.instance()
 		new_egg.position = position
 		new_egg.linear_velocity.x = velocity.x / 4
 		new_egg.linear_velocity.y = velocity.y
 		get_parent().add_child(new_egg)
-		.hide()
-		.queue_free()
-	
-	velocity = move_and_slide(velocity, Vector2(0, -1))
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_AnimatedSprite_animation_finished():
-	pass # Replace with function body.
+		queue_free()

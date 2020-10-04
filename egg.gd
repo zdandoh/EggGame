@@ -9,10 +9,14 @@ var player = load("res://player.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Camera2D.current = true;
 
 func _physics_process(delta):
-	angular_velocity = max(linear_velocity.x / 20, angular_velocity)
+	if linear_velocity.x > 0:
+		angular_velocity = max(linear_velocity.x / 20, angular_velocity)
+	if linear_velocity.x < 0:
+		angular_velocity = min(linear_velocity.x / 20, angular_velocity)
+	
 	if Input.is_action_just_pressed("egg_toggle"):
 		var new_player = player.instance()
 		new_player.position = position
@@ -24,10 +28,3 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-func _on_Area2D_body_entered(body):
-	print(body)
-
-
-func _on_Area2D_body_exited(body):
-	print("exit")
