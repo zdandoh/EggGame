@@ -35,7 +35,6 @@ func _physics_process(delta):
 	var bodies = get_colliding_bodies()
 	for bod in bodies:
 		if bod.name.begins_with("JumpShroom") && !recent_jump:
-			print("applied impulse")
 			apply_impulse(Vector2(0, 0), Vector2(0, -600))
 			recent_jump = true
 			_timer.start()

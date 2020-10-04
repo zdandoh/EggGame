@@ -13,8 +13,15 @@ func _ready():
 
 func _physics_process(delta):
 	if !$RayCast2D.is_colliding():
-		dir *= -1
-		$AnimatedSprite.set_flip_h(dir != 1)
+		flip()
 	velocity.y += gravity * delta
 	velocity.x = speed * dir
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	for i in get_slide_count():
+		var coll = get_slide_collision(i)
+		if coll.collider.name.begins_with("Fence"):
+			flip()
+
+func flip():
+	dir *= -1
+	$AnimatedSprite.set_flip_h(dir != 1)

@@ -1,17 +1,39 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://pillar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://nest.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://jumppad.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nest.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Fence.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Platform" parent="." instance=ExtResource( 1 )]
-scale = Vector2( 7, 1 )
+scale = Vector2( 12, 1 )
+
+[node name="Platform2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -339.028, 165.276 )
+scale = Vector2( 4, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 65.7316, -66.5267 )
+position = Vector2( -345.85, -82.2832 )
 
-[node name="Nest" parent="." instance=ExtResource( 3 )]
-position = Vector2( -102.684, -59.8463 )
+[node name="Nest" parent="." instance=ExtResource( 5 )]
+position = Vector2( -180.772, -59.8463 )
 target = "res://test_level.tscn"
+
+[node name="JumpShroom" parent="." instance=ExtResource( 4 )]
+position = Vector2( 148.229, -48.3296 )
+
+[node name="JumpShroom2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 68.0652, -48.3296 )
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( -351.721, 90.5809 )
+
+[node name="Fence" parent="." instance=ExtResource( 6 )]
+position = Vector2( -418.294, 129.772 )
+
+[node name="Fence2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -272.253, 129.375 )
