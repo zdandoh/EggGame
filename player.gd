@@ -51,12 +51,7 @@ func _physics_process(delta):
 		if coll.collider.name.begins_with("JumpShroom"):
 			velocity.y = jump_speed * 1.5
 		if coll.collider.name.begins_with("Enemy"):
-			$AnimatedSprite.play("death")
-			var new_cam = Camera2D.new()
-			new_cam.position = position
-			new_cam.current = true
-			get_parent().add_child(new_cam)
-			$Camera2D.current = false
+			die()
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "egging":
@@ -74,3 +69,11 @@ func _on_AnimatedSprite_animation_finished():
 		new_ghost.position = position
 		get_parent().add_child(new_ghost)
 		queue_free()
+
+func die():
+	$AnimatedSprite.play("death")
+	var new_cam = Camera2D.new()
+	new_cam.position = position
+	new_cam.current = true
+	get_parent().add_child(new_cam)
+	$Camera2D.current = false

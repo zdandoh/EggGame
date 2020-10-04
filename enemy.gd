@@ -21,6 +21,8 @@ func _physics_process(delta):
 		var coll = get_slide_collision(i)
 		if coll.collider.name.begins_with("Fence"):
 			flip()
+		if coll.collider.name.begins_with("Player"):
+			coll.collider.die()
 
 func flip():
 	dir *= -1

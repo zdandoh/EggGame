@@ -33,7 +33,7 @@ position = Vector2( 68.0652, -48.3296 )
 position = Vector2( -351.721, 90.5809 )
 
 [node name="Fence" parent="." instance=ExtResource( 6 )]
-position = Vector2( -418.294, 129.772 )
+position = Vector2( -428.115, 130.218 )
 
 [node name="Fence2" parent="." instance=ExtResource( 6 )]
-position = Vector2( -272.253, 129.375 )
+position = Vector2( -271.139, 129.624 )
