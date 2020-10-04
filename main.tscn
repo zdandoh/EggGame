@@ -4,7 +4,7 @@
 [ext_resource path="res://platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://egg.tscn" type="PackedScene" id=3]
 [ext_resource path="res://img/backgroundpalceholder.png" type="Texture" id=4]
-[ext_resource path="res://img/enviro/test this hole.png" type="Texture" id=5]
+[ext_resource path="res://img/enviro/newground.png" type="Texture" id=5]
 [ext_resource path="res://img/enviro/holetestbg.png" type="Texture" id=6]
 [ext_resource path="res://img/enviro/betterrocks.png" type="Texture" id=7]
 [ext_resource path="res://img/enviro/hole_cover.png" type="Texture" id=8]
@@ -51,7 +51,8 @@ position = Vector2( 595.536, 210.477 )
 physics_material_override = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Ground"]
-position = Vector2( 18.6877, 329.705 )
+position = Vector2( -13.3846, 317.232 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 5 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
