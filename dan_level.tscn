@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://img/enviro/egggametileset.tres" type="TileSet" id=1]
 [ext_resource path="res://egg.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Antigrav.tscn" type="PackedScene" id=8]
 [ext_resource path="res://img/enviro/mushtree.png" type="Texture" id=9]
 [ext_resource path="res://nest.tscn" type="PackedScene" id=10]
+[ext_resource path="res://bgmusic.tscn" type="PackedScene" id=11]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 6 )
@@ -56,10 +57,7 @@ position = Vector2( -442.097, 42.8712 )
 position = Vector2( 2101.72, 1501.68 )
 
 [node name="Egg" parent="." instance=ExtResource( 2 )]
-position = Vector2( -27.6011, 54.6398 )
-
-[node name="JumpShroom" parent="." instance=ExtResource( 7 )]
-position = Vector2( 376.425, 52.7262 )
+position = Vector2( -32.5624, 53.1481 )
 
 [node name="JumpShroom2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 878.61, 55.9046 )
@@ -71,6 +69,20 @@ gravity_vec = Vector2( 0.5, -1 )
 
 [node name="Shroom" type="Sprite" parent="."]
 position = Vector2( -302.822, -39.0363 )
+scale = Vector2( 3.23052, 3.8754 )
+z_index = -3
+texture = ExtResource( 9 )
+
+[node name="Shroom4" type="Sprite" parent="."]
+position = Vector2( 1223.18, 280.964 )
+rotation = 0.523598
+scale = Vector2( 3.23052, 3.8754 )
+z_index = -3
+texture = ExtResource( 9 )
+
+[node name="Shroom5" type="Sprite" parent="."]
+position = Vector2( 1769.18, 462.964 )
+rotation = -0.523598
 scale = Vector2( 3.23052, 3.8754 )
 z_index = -3
 texture = ExtResource( 9 )
@@ -91,10 +103,33 @@ texture = ExtResource( 9 )
 
 [node name="Enemy4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1016.03, -141.968 )
+detect_fall = false
+
+[node name="Enemy6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1229.59, -139.448 )
+detect_fall = false
 
 [node name="Enemy5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1634.81, -21.0129 )
+detect_fall = false
 
 [node name="Nest" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2012.12, 622.442 )
 target = "res://finish.tscn"
+
+[node name="Fence6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1268.64, -125.195 )
+
+[node name="Fence10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1133.83, -134.644 )
+
+[node name="Fence8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1555.95, 3.01532 )
+
+[node name="Fence9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1714.78, 4.13779 )
+
+[node name="Fence7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 982.602, -134.14 )
+
+[node name="bg music" parent="." instance=ExtResource( 11 )]
