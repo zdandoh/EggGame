@@ -9,6 +9,8 @@ var goal = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if get_tree().current_scene.name == "tutorial":
+		scale.x = -1
 	modulate.a = 0.8
 	play("default")
 

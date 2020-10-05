@@ -5,6 +5,7 @@ export (int) var speed = 200
 var gravity = 750
 var jump_speed = -450
 var velocity = Vector2()
+var my_flip = false
 
 var egg = preload("res://egg.tscn")
 var ghost = preload("res://ghost.tscn")
@@ -13,6 +14,8 @@ var ghost = preload("res://ghost.tscn")
 
 func _ready():
 	$Camera2D.current = true
+	if get_tree().current_scene.name == "tutorial":
+		scale.x = -1
 
 func get_input():
 	velocity.x = 0
@@ -20,10 +23,12 @@ func get_input():
 	if Input.is_action_pressed("right"):
 		velocity.x += speed
 		$AnimatedSprite.set_flip_h(false)
+		my_flip = false
 		do_walk = true
 	if Input.is_action_pressed("left"):
 		velocity.x -= speed
 		$AnimatedSprite.set_flip_h(true)
+		my_flip = true
 		do_walk = true
 	if do_walk && !$AnimatedSprite.playing:
 		$AnimatedSprite.play("walk")
@@ -67,6 +72,7 @@ func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "death":
 		var new_ghost = ghost.instance()
 		new_ghost.position = position
+		new_ghost.set_flip_h(my_flip)
 		get_parent().add_child(new_ghost)
 		queue_free()
 

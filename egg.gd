@@ -17,6 +17,8 @@ func _ready():
 	add_child(_timer)
 	_timer.connect("timeout", self, "_on_Timer_timeout")
 	_timer.set_wait_time(0.05)
+	if get_tree().current_scene.name == "tutorial":
+		scale.x = -1
 
 func _physics_process(delta):
 	if linear_velocity.x > 0:

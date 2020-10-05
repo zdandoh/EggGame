@@ -16,13 +16,14 @@
 friction = 0.9
 
 [sub_resource type="PhysicsMaterial" id=2]
-friction = 0.06
+friction = 0.1
 
 [sub_resource type="PhysicsMaterial" id=3]
 friction = 5.0
 
-[node name="Node2D" type="Node2D"]
+[node name="tutorial" type="Node2D"]
 position = Vector2( 1, 0 )
+scale = Vector2( -1, 1 )
 script = ExtResource( 1 )
 
 [node name="BG" type="Sprite" parent="."]
@@ -32,22 +33,19 @@ z_index = -10
 texture = ExtResource( 4 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 513.959, 350.128 )
+position = Vector2( 540.945, 352.509 )
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 426.799, 83.064 )
+position = Vector2( 453.785, 85.4451 )
 
 [node name="StaticBody2D4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 530.719, -44.6222 )
+position = Vector2( 557.705, -42.2411 )
 
 [node name="StaticBody2D5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 646.529, -141.54 )
+position = Vector2( 673.515, -139.159 )
 
 [node name="StaticBody2D3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 424.416, 225.326 )
-
-[node name="StaticBody2D6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 595.536, 210.477 )
+position = Vector2( 451.402, 227.707 )
 
 [node name="Ground" type="StaticBody2D" parent="."]
 physics_material_override = SubResource( 1 )
@@ -60,12 +58,12 @@ texture = ExtResource( 5 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2( -13.3846, 317.232 )
 scale = Vector2( 4, 4 )
-polygon = PoolVector2Array( 23, 30.9, 23, 33.7, 23.4, 35, 25.6, 35, 31.6, 39, 49, 39, 71, 38.1, 85.6, 31, 96.2, 31, 125.4, 37, 127.7, 37, 143, 34.7, 143, 36.1, 167.1, 37.9, 173.4, 34, 175.8, 34, 179, 37.2, 179, 50.6, 169.1, 66, 166.5, 66, 153.6, 74, 146.4, 74, 131.4, 80, 125.2, 80, 108, 81.8, 108, 82.6, 61.2, 94, 52.3, 94, 43.3, 97, -17, 97, -17, 95.9, -102, 90.1, -102, 90.7, -158, 99.3, -158, 97.5, -186, 90.6, -186, 89, -199, 80, -199, 77.5, -202.3, 72, -201.2, 70, -199.8, 70, -197.5, 67.6, -195, 68.7, -195, 69.5, -183.7, 73, -154, 73, -154, 74, -150.2, 74, -127, 71.2, -106, 60.7, -74.8, 29, -71.9, 29, -51, 30.1, -51, 31.5, -35.7, 36, -18, 36, -18, 35.2, 4, 33.2, 9.20001, 28, 14, 28, 16, 26.7 )
+polygon = PoolVector2Array( 23, 30.9, 23, 33.7, 23.4, 35, 25.6, 35, 31.6, 39, 49, 39, 71, 38.1, 85.6, 31, 96.2, 31, 125.4, 37, 127.7, 37, 143, 34.7, 143, 36.1, 167.1, 37.9, 173.4, 34, 175.8, 34, 178.822, 34.2497, 179, 50.6, 169.1, 66, 166.5, 66, 153.6, 74, 146.4, 74, 131.4, 80, 125.2, 80, 108, 81.8, 108, 82.6, 61.2, 94, 52.3, 94, 43.3, 97, -17, 97, -17, 95.9, -102, 90.1, -102, 90.7, -158, 99.3, -158, 97.5, -186, 90.6, -186, 89, -199, 80, -199, 77.5, -202.3, 72, -201.2, 70, -199.8, 70, -197.5, 67.6, -195, 68.7, -195, 69.5, -183.7, 73, -154, 73, -154, 74, -150.2, 74, -127, 71.2, -106, 60.7, -74.8, 29, -71.9, 29, -51, 30.1, -51, 31.5, -35.7, 36, -18, 36, -18, 35.2, 4, 33.2, 9.20001, 28, 14, 28, 16, 26.7 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2( -13.3846, 317.232 )
 scale = Vector2( 4, 4 )
-polygon = PoolVector2Array( 274, 36.5, 274, 170.8, 270.8, 174, -272, 174, -274, 70, -271, 70, -236, 69.1, -224, 64.1, -224, 67.3, -202, 95, -200.7, 95, -166.7, 106, -161.8, 106, -134.6, 112, -126.4, 112, -111.2, 109, -89, 109, 56, 107, 56, 106.4, 161, 84.3, 173, 77.8, 173, 77.1, 192, 60.1, 192, 58.6, 200.6, 36, 203.7, 36, 210.7, 42, 229, 42, 240.6, 37, 248.8, 37, 263, 35.2, 263, 33.3 )
+polygon = PoolVector2Array( 274, 36.5, 274, 170.8, 270.8, 174, -272, 174, -274, 70, -271, 70, -236, 69.1, -224, 64.1, -232.654, 94.692, -225.654, 138.942, -116.654, 134.942, 20.3461, 152.442, 47.0961, 153.942, 82.3462, 149.692, 149.596, 146.692, 190.096, 142.942, 215.596, 133.942, 218.596, 70.192, 198.075, 40.5941, 198.659, 34.0033, 203.7, 36, 210.7, 42, 229, 42, 240.6, 37, 248.8, 37, 263, 35.2, 263, 33.3 )
 
 [node name="GroundSlippery" type="StaticBody2D" parent="."]
 physics_material_override = SubResource( 2 )
@@ -73,7 +71,7 @@ physics_material_override = SubResource( 2 )
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="GroundSlippery"]
 position = Vector2( -13.3846, 315.232 )
 scale = Vector2( 4, 4 )
-polygon = PoolVector2Array( 274, 36.5, 274, 170.8, 270.8, 174, -272, 174, -274, 70, -271, 70, -236, 69.1, -224, 64.1, -224, 67.3, -202, 95, -200.7, 95, -166.7, 106, -161.8, 106, -134.6, 112, -126.4, 112, -111.2, 109, -89, 109, 56, 107, 56, 106.4, 161, 84.3, 173, 77.8, 173, 77.1, 192, 60.1, 192, 58.6, 200.6, 36, 203.7, 36, 210.7, 42, 229, 42, 240.6, 37, 248.8, 37, 263, 35.2, 263, 33.3 )
+polygon = PoolVector2Array( -118.407, 158.567, -274, 70, -271, 70, -236, 69.1, -224, 64.1, -224, 67.3, -202, 95, -200.7, 95, -166.7, 106, -161.8, 106, -134.6, 112, -126.4, 112, -111.2, 109, -89, 109, 56, 107, 56, 106.4, 161, 84.3, 173, 77.8, 180.101, 71.8677, 183.581, 68.3282, 187.534, 64.0807, 195.913, 49.6283, 197.037, 44.5715, 197.552, 36.565, 203.7, 36, 204.926, 116.005 )
 
 [node name="HoleBG" type="Sprite" parent="."]
 position = Vector2( -11.7867, 322.449 )
@@ -85,6 +83,7 @@ texture = ExtResource( 6 )
 linear_damp = 1.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HoleBG/Area2D"]
+position = Vector2( 0.104991, 0 )
 build_mode = 1
 polygon = PoolVector2Array( -200.811, 68.7267, -227.029, 68.4736, -209.55, 98.0851, -153.868, 114.03, -20.7782, 117.573, 84.5945, 110.74, 201.204, 89.9863, 210.692, 45.6956, 200.954, 36.8374, 173.737, 35.8251, 139.029, 64.4242, -3.54904, 80.6219, -138.137, 84.9245, -188.076, 80.1158 )
 
@@ -164,4 +163,6 @@ position = Vector2( 837.847, 471.21 )
 stream = ExtResource( 10 )
 autoplay = true
 
-[node name="nest" parent="." instance=ExtResource( 11 )]
+[node name="Nest" parent="." instance=ExtResource( 11 )]
+position = Vector2( -1021.13, 556.723 )
+target = "res://level1.tscn"
