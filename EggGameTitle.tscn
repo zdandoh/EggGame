@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://img/egg/egg2.png" type="Texture" id=1]
 [ext_resource path="res://img/egggametitle.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://img/egg/egg4.png" type="Texture" id=7]
 [ext_resource path="res://bgmusic.tscn" type="PackedScene" id=8]
 [ext_resource path="res://img/egg/egg1.png" type="Texture" id=9]
+[ext_resource path="res://EggGameTitle.gd" type="Script" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -19,6 +20,7 @@ animations = [ {
 } ]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 333.738, 302.807 )
@@ -32,7 +34,7 @@ __meta__ = {
 position = Vector2( 746.232, 343.407 )
 scale = Vector2( 3.41199, 3.54209 )
 frames = SubResource( 1 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Sprite2" type="Sprite" parent="."]
