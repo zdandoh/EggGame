@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://egg.tscn" type="PackedScene" id=1]
 [ext_resource path="res://img/enviro/egg tiles.png" type="Texture" id=2]
@@ -13,6 +13,18 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0.271759, 64, 0.271759 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 63.7965, 63.4527, 0.421753, 63.8403, 0.227951, 58.9952, 18.0582, 42.9092, 38.2141, 28.1799, 63.4089, 16.7453 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 64, 64, 0, 63.7969, 0, 0.0856934, 12.8986, 20.1804, 53.0102, 57.3323 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 12.3765, 13.1463, 44.1542, 15.8723, 64, 11.6664, 64, 64, 0.148361, 64, 0, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+points = PoolVector2Array( 64, 64, 0.118683, 64, 0.118683, 12.5378, 64, 12.5378 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( 0.0918884, 64, 20.9655, 54.0513, 42.6958, 47.0415, 52.4316, 35.748, 63.803, 10.9801, 64, 0.854828, 64, 64 )
 
 [sub_resource type="ConvexPolygonShape2D" id=12]
 points = PoolVector2Array( 60.1731, 37.9998, 4.45367, 37.9998, 4.45367, 29.9246, 60.1731, 29.9246 )
@@ -36,16 +48,19 @@ points = PoolVector2Array( 64, 63.6465, 0.346039, 63.6465, 0.346039, 10.7373, 64
 points = PoolVector2Array( 0.502319, 9.45819, 9.22363, 13.5281, 24.5344, 29.6141, 26.2786, 34.0716, 52.8301, 49.3824, 63.2957, 57.3284, 63.1019, 63.5302, 0.114716, 63.5302 )
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 0.0779419, 1.4826, 14.032, 24.7394, 46.7853, 52.2599, 63.4527, 54.198, 64, 64, 0.271759, 64 )
+points = PoolVector2Array( 0.0779419, 1.4826, 18.3026, 25.3259, 43.659, 48.0982, 63.6857, 63.7642, 64, 64, 0.271759, 64 )
 
-[sub_resource type="ConvexPolygonShape2D" id=7]
-points = PoolVector2Array( 0.133255, 54.7019, 23.39, 52.5701, 50.7168, 55.0895, 64, 53.5391, 63.8956, 64, 0, 64 )
+[sub_resource type="ConvexPolygonShape2D" id=20]
+points = PoolVector2Array( 42.4879, 15.1461, 57.5978, 11.1739, 64, 11.5633, 63.9066, 63.9031, 0.117592, 64, 0, 0.659203, 1.51955, 0.737091, 9.46397, 10.7066, 16.4738, 12.8095, 25.898, 12.1864 )
 
-[sub_resource type="ConvexPolygonShape2D" id=8]
-points = PoolVector2Array( 0.520874, 14.3901, 0.520874, 1.01747, 62.539, 1.40509, 62.3452, 7.02548, 50.9106, 8.57594, 36.9565, 5.66884, 20.2891, 10.7078, 13.3121, 8.57594, 2.45894, 12.6459 )
+[sub_resource type="ConvexPolygonShape2D" id=21]
+points = PoolVector2Array( 28.3428, 13.8561, 46.4125, 11.1301, 64, 12.6099, 64, 63.7035, 0.0700073, 64, 0, 11.9089, 21.4888, 11.7532 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+points = PoolVector2Array( 0.128571, 14.669, 0, 0.337921, 64, 0, 63.9955, 15.9152, 29.5697, 18.4855, 8.61819, 21.6788 )
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
-points = PoolVector2Array( 1.26013, 48.9652, 23.9355, 54.198, 35.3701, 51.0971, 49.518, 40.2439, 64, 4.58351, 63.8597, 64, 0.484894, 64 )
+points = PoolVector2Array( 8.73087, 57.5504, 18.1552, 48.5935, 31.0064, 39.5587, 49.8904, 19.7025, 64, 1.7058, 63.8597, 64, 0, 64 )
 
 [sub_resource type="TileSet" id=10]
 0/name = "egg tiles.png 0"
@@ -184,20 +199,14 @@ points = PoolVector2Array( 1.26013, 48.9652, 23.9355, 54.198, 35.3701, 51.0971, 
 6/navigation_offset = Vector2( 0, 0 )
 6/shape_offset = Vector2( 0, 0 )
 6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-6/shape = SubResource( 7 )
+6/shape = SubResource( 20 )
 6/shape_one_way = false
 6/shape_one_way_margin = 1.0
 6/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 7 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-}, {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 8 ),
+"shape": SubResource( 20 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 6/z_index = 0
@@ -211,9 +220,16 @@ points = PoolVector2Array( 1.26013, 48.9652, 23.9355, 54.198, 35.3701, 51.0971, 
 7/navigation_offset = Vector2( 0, 0 )
 7/shape_offset = Vector2( 0, 0 )
 7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 21 )
 7/shape_one_way = false
-7/shape_one_way_margin = 0.0
-7/shapes = [  ]
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 21 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 7/z_index = 0
 8/name = "egg tiles.png 8"
 8/texture = ExtResource( 2 )
@@ -225,9 +241,16 @@ points = PoolVector2Array( 1.26013, 48.9652, 23.9355, 54.198, 35.3701, 51.0971, 
 8/navigation_offset = Vector2( 0, 0 )
 8/shape_offset = Vector2( 0, 0 )
 8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 22 )
 8/shape_one_way = false
-8/shape_one_way_margin = 0.0
-8/shapes = [  ]
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 22 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 8/z_index = 0
 9/name = "egg tiles.png 9"
 9/texture = ExtResource( 2 )
@@ -260,9 +283,16 @@ points = PoolVector2Array( 1.26013, 48.9652, 23.9355, 54.198, 35.3701, 51.0971, 
 10/navigation_offset = Vector2( 0, 0 )
 10/shape_offset = Vector2( 0, 0 )
 10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape = SubResource( 16 )
 10/shape_one_way = false
-10/shape_one_way_margin = 0.0
-10/shapes = [  ]
+10/shape_one_way_margin = 1.0
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 10/z_index = 0
 11/name = "egg tiles.png 11"
 11/texture = ExtResource( 2 )
@@ -274,9 +304,16 @@ points = PoolVector2Array( 1.26013, 48.9652, 23.9355, 54.198, 35.3701, 51.0971, 
 11/navigation_offset = Vector2( 0, 0 )
 11/shape_offset = Vector2( 0, 0 )
 11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape = SubResource( 17 )
 11/shape_one_way = false
-11/shape_one_way_margin = 0.0
-11/shapes = [  ]
+11/shape_one_way_margin = 1.0
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 11/z_index = 0
 12/name = "egg tiles.png 12"
 12/texture = ExtResource( 2 )
@@ -288,9 +325,16 @@ points = PoolVector2Array( 1.26013, 48.9652, 23.9355, 54.198, 35.3701, 51.0971, 
 12/navigation_offset = Vector2( 0, 0 )
 12/shape_offset = Vector2( 0, 0 )
 12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape = SubResource( 18 )
 12/shape_one_way = false
-12/shape_one_way_margin = 0.0
-12/shapes = [  ]
+12/shape_one_way_margin = 1.0
+12/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 12/z_index = 0
 13/name = "egg tiles.png 13"
 13/texture = ExtResource( 2 )
@@ -316,9 +360,16 @@ points = PoolVector2Array( 1.26013, 48.9652, 23.9355, 54.198, 35.3701, 51.0971, 
 14/navigation_offset = Vector2( 0, 0 )
 14/shape_offset = Vector2( 0, 0 )
 14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape = SubResource( 19 )
 14/shape_one_way = false
-14/shape_one_way_margin = 0.0
-14/shapes = [  ]
+14/shape_one_way_margin = 1.0
+14/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 19 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 14/z_index = 0
 15/name = "egg tiles.png 15"
 15/texture = ExtResource( 2 )
