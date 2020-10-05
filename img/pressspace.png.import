@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/egg3.png-f3276457001e3bb74a3f211d76ec867e.stex"
+path="res://.import/pressspace.png-4ab454a7001bffc210a4335ad7e44c83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/egg/egg3.png"
-dest_files=[ "res://.import/egg3.png-f3276457001e3bb74a3f211d76ec867e.stex" ]
+source_file="res://img/pressspace.png"
+dest_files=[ "res://.import/pressspace.png-4ab454a7001bffc210a4335ad7e44c83.stex" ]
 
 [params]
 

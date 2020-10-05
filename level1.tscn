@@ -53,7 +53,7 @@ __meta__ = {
 }
 
 [node name="Egg" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1603.34, -68.3801 )
+position = Vector2( -1610.54, -1.36781 )
 
 [node name="Rocks" type="StaticBody2D" parent="."]
 position = Vector2( 1817.06, -260.196 )
@@ -187,7 +187,8 @@ z_index = -2
 texture = ExtResource( 10 )
 
 [node name="Nest" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1915.53, 613.739 )
+position = Vector2( 1915.53, 614.285 )
+target = "res://dan_level.tscn"
 
 [node name="Antigrav" parent="." instance=ExtResource( 12 )]
 position = Vector2( 65.9999, 271.407 )
