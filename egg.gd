@@ -27,6 +27,7 @@ func _physics_process(delta):
 		angular_velocity = min(linear_velocity.x / 20, angular_velocity)
 	
 	if Input.is_action_just_pressed("egg_toggle"):
+		rotation = 0
 		var new_player = player.instance()
 		new_player.position = position
 		new_player.velocity = linear_velocity
