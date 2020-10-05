@@ -16,7 +16,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	if position.y <= -600:
+	if position.y <= -1000:
 		queue_free()
 	if goal == 0:
 		var r = randi()
