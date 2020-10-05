@@ -52,7 +52,7 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	get_input()
 	
-	velocity = move_and_slide_with_snap(velocity, Vector2(0, 1), Vector2(0, -1), true)
+	velocity = move_and_slide_with_snap(velocity, Vector2(0, 3), Vector2(0, -1), true)
 	for i in get_slide_count():
 		var coll = get_slide_collision(i)
 		if coll.collider.name.begins_with("JumpShroom"):
