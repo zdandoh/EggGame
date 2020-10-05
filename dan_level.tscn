@@ -115,7 +115,7 @@ detect_fall = false
 
 [node name="Nest" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2012.12, 622.442 )
-target = "res://finish.tscn"
+target = "res://youwin.tscn"
 
 [node name="Fence6" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1268.64, -125.195 )

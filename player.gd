@@ -6,9 +6,12 @@ var gravity = 750
 var jump_speed = -450
 var velocity = Vector2()
 var my_flip = false
+var dead = false
 
 var egg = preload("res://egg.tscn")
 var ghost = preload("res://ghost.tscn")
+var meep = preload("res://Meep.tscn")
+var huh = preload("res://Huh.tscn")
 
 # Called when the node enters the scene tree for the first time.
 
@@ -40,7 +43,6 @@ func get_input():
 		$AnimatedSprite.play("egging")
 	
 	if Input.is_action_just_pressed("jump"):
-		print(is_on_floor(), is_on_ceiling(), is_on_wall())
 		if is_on_floor():
 			velocity.y = jump_speed
 
@@ -57,11 +59,17 @@ func _physics_process(delta):
 		var coll = get_slide_collision(i)
 		if coll.collider.name.begins_with("JumpShroom"):
 			velocity.y = jump_speed * 1.5
+			$Beh.play(0.03)
 		if coll.collider.name.begins_with("Enemy"):
 			die()
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "egging":
+
+		var guh = huh.instance()
+		get_parent().add_child(guh)
+		guh.play()
+		
 		$AnimatedSprite.stop()
 		var new_egg = egg.instance()
 		new_egg.position = position
@@ -79,6 +87,12 @@ func _on_AnimatedSprite_animation_finished():
 		queue_free()
 
 func die():
+	if dead:
+		return
+	dead = true
+	var sound = meep.instance()
+	get_parent().add_child(sound)
+	sound.play()
 	$AnimatedSprite.play("death")
 	var new_cam = Camera2D.new()
 	new_cam.position = position
