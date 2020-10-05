@@ -39,8 +39,10 @@ func get_input():
 	if Input.is_action_just_pressed("egg_toggle"):
 		$AnimatedSprite.play("egging")
 	
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		velocity.y = jump_speed
+	if Input.is_action_just_pressed("jump"):
+		print(is_on_floor(), is_on_ceiling(), is_on_wall())
+		if is_on_floor():
+			velocity.y = jump_speed
 
 func _physics_process(delta):
 	if $AnimatedSprite.animation == "death":
@@ -50,7 +52,7 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	get_input()
 	
-	velocity = move_and_slide(velocity, Vector2(0, -1))
+	velocity = move_and_slide_with_snap(velocity, Vector2(0, 1), Vector2(0, -1), true)
 	for i in get_slide_count():
 		var coll = get_slide_collision(i)
 		if coll.collider.name.begins_with("JumpShroom"):

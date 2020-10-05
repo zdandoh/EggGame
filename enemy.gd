@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export (int) var speed = 50
+export (bool) var detect_fall = true
 
 var gravity = 750
 var jump_speed = -450
@@ -12,7 +13,7 @@ func _ready():
 	$AnimatedSprite.play("walk")
 
 func _physics_process(delta):
-	if !$RayCast2D.is_colliding():
+	if !$RayCast2D.is_colliding() && detect_fall:
 		flip()
 	velocity.y += gravity * delta
 	velocity.x = speed * dir

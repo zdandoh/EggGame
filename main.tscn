@@ -3,7 +3,7 @@
 [ext_resource path="res://main.gd" type="Script" id=1]
 [ext_resource path="res://platform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://egg.tscn" type="PackedScene" id=3]
-[ext_resource path="res://img/backgroundpalceholder.png" type="Texture" id=4]
+[ext_resource path="res://BG.tscn" type="PackedScene" id=4]
 [ext_resource path="res://img/enviro/newground.png" type="Texture" id=5]
 [ext_resource path="res://img/enviro/newgroundbg.png" type="Texture" id=6]
 [ext_resource path="res://img/enviro/betterrocks.png" type="Texture" id=7]
@@ -25,12 +25,6 @@ friction = 5.0
 position = Vector2( 1, 0 )
 scale = Vector2( -1, 1 )
 script = ExtResource( 1 )
-
-[node name="BG" type="Sprite" parent="."]
-position = Vector2( 2207.54, 1024.14 )
-scale = Vector2( 1.05301, 1.06916 )
-z_index = -10
-texture = ExtResource( 4 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 540.945, 352.509 )
@@ -157,7 +151,7 @@ z_index = -2
 texture = ExtResource( 9 )
 
 [node name="Egg" parent="." instance=ExtResource( 3 )]
-position = Vector2( 837.847, 471.21 )
+position = Vector2( 862.541, 471.21 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 10 )
@@ -166,3 +160,6 @@ autoplay = true
 [node name="Nest" parent="." instance=ExtResource( 11 )]
 position = Vector2( -1021.13, 556.723 )
 target = "res://level1.tscn"
+
+[node name="BG" parent="." instance=ExtResource( 4 )]
+position = Vector2( -2523.15, 1429.39 )
